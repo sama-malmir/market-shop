@@ -15,6 +15,10 @@ const Product = ({ match }) => {
     dispatch(productDetailAction(id));
   }, [dispatch, match]);
 
+  const addToCartHandler = () => {
+    window.location.href = `/cart/${id}`
+  }
+
   return (
     <div>
       <Link to="/" className="btn btn-light my-3">
@@ -39,7 +43,7 @@ const Product = ({ match }) => {
           <Col md={3}>
             <ListGroup variant="flush">
               <ListGroup.Item>
-                <Button className="btn-block" type="button">
+                <Button onClick={addToCartHandler} className="btn-block" type="button">
                   افزودن به سبد خرید
                 </Button>
               </ListGroup.Item>
